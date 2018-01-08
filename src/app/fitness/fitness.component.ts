@@ -12,4 +12,5 @@ export class FitnessComponent implements OnInit {
   ngOnInit() {
   }
 
+  title = "Fitness";
 }
