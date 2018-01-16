@@ -1,9 +1,7 @@
 <section class="content-intro">
     <div class ="content-inner">
         <div class="content">
-            <img src="/assets/images/ProfilePicture.jpg" alt="portrait">
-            <h1>{{ title }}</h1>
-            <p>Developer - Entrepreneur - Athlete</p>
+            <router-outlet></router-outlet>
         </div>
     </div>
 </section>
@@ -11,9 +9,26 @@
     <div class ="background-inner">
     </div>
 </section>
+<div class="home-button">
+    <a routerLink="home">
+        <img src="/assets/images/home.png">
+    </a>
+</div>
 <div class="bottom-arrow">V</div>
 <div class="bottom-sections">
-    <app-fitness id="fitness-section" class="bottom-section"></app-fitness>
-    <app-coding id="coding-section" class="bottom-section"></app-coding>
-    <app-contact id="contact-section" class="bottom-section"></app-contact>
+    <a routerLink="fitness">
+        <div id="fitness-section" class="bottom-section">
+            <h1>Fitness</h1>
+        </div>
+    </a>
+    <a routerLink="projects">
+        <div id="coding-section" class="bottom-section">
+            <h1>Projects</h1>
+        </div>
+    </a>
+    <a routerLink="contact">
+        <div id="contact-section" class="bottom-section">
+            <h1>Contact</h1>
+        </div>
+    </a>
 </div>
