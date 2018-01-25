@@ -37,12 +37,11 @@
 }
 
 .content {
-    max-width: 500px;
     margin: 0 auto;
     text-align: center;
 }
 
-:host ::ng-deep .content img {
+.content img {
     border-radius: 100%;
     margin: auto;
     width: 100px;
