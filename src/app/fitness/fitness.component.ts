@@ -31,8 +31,10 @@ export class FitnessComponent implements OnInit {
 
   ngOnInit() {
     this.httpClient.get<JsonObject>(this.url).subscribe(value => {
+
       this.username = value.data[0].user.username;
       this.profile_picture = value.data[0].user.profile_picture;
+
       for (var i = 0; i < 20; i++) {
         this.img_url = value.data[i].images.low_resolution.url;
         this.img_width = value.data[i].images.standard_resolution.width;
@@ -51,6 +53,7 @@ export class FitnessComponent implements OnInit {
 
   title = "Fitness";
 }
+
 interface JsonObject {
   data: {
     index: {
