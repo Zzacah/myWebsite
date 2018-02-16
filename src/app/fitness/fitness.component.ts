@@ -7,6 +7,7 @@ import { of } from 'rxjs/observable/of';
 import { HttpErrorResponse } from '@angular/common/http/src/response';
 import 'rxjs/add/operator/retry';
 import * as $ from 'jquery';
+import { InstaPost } from '../instaPost';
 
 @Component({
   selector: 'app-fitness',
@@ -28,6 +29,13 @@ export class FitnessComponent implements OnInit {
   profile_picture: string;
   click_url: string;
   private url: string = 'https://api.instagram.com/v1/users/5060760542/media/recent/?count=99&access_token=5060760542.8634957.020a7fa6e7f14c8984bcd37d29226b58';
+  private instaPost: InstaPost[];
+  private num_posts: number;
+  private one_pic_width = "(max-width: 400px)";
+  private two_pic_width = "(max-width: 750px)";
+  private three_pic_width = "(max-width: 1000px)";
+  private four_pic_width = "(max-width: 1400px)";
+
 
   ngOnInit() {
     this.httpClient.get<JsonObject>(this.url).subscribe(value => {
@@ -37,6 +45,8 @@ export class FitnessComponent implements OnInit {
 
       for (var i = 0; i < 20; i++) {
         this.img_url = value.data[i].images.low_resolution.url;
+        // this.instaPost[i].img_url = value.data[i].images.low_resolution.url;
+        // console.log(this.instaPost[i].img_url);
         this.img_width = value.data[i].images.standard_resolution.width;
         this.img_height = value.data[i].images.standard_resolution.height;
 
@@ -52,6 +62,11 @@ export class FitnessComponent implements OnInit {
   }
 
   title = "Fitness";
+
+}
+
+function getWidth(width) {
+ 
 }
 
 interface JsonObject {
