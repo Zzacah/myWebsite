@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "default": "mywebsite-7802d"
+  }
+}
